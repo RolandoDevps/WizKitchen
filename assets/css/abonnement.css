@@ -1,0 +1,35 @@
+.card_title_item {
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+}
+
+p.price {
+    color: #c25a3a;
+    font-family: 'Circe-Italic', Helvetica;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 400;
+    height: 38px;
+    letter-spacing: 0.00px;
+    margin-top: 20px;
+}
+
+.card_title_item h3 {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.container_btn_link {
+    bottom: -25px;
+    width: 100%;
+    margin-top: 0;
+}
+
+.abonnement .card_item .card_image img {
+    height: 364px;
+}
+
+.section_abonnement .fond-5 {
+    top: -127%;
+}

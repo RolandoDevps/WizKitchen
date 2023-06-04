@@ -1,0 +1,30 @@
+/* ********************************* header *************************** */
+
+/*ici c'ets le responsive du header de la page d'accueil*/
+@media only screen and (max-width: 1200px) {
+    .wrap-navigation {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ********************************* body *************************** */
+
+
+
+
+
+
+
+
+
+
+
+/* ********************************* footer *************************** */
