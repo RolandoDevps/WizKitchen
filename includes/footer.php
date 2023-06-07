@@ -97,7 +97,7 @@ if(isset($_POST['newsletter']))
                 <div class="container">
                     <div class="wrap_section_title"><h1 class="titlesection">Newsletter</h1> <p class="section_description">subscribe to our newsletter &amp; stay updated</p></div>
                     <div class="wrap_content_newsletter">
-                        <form class="form" action="" method="post" id="form-newsletter-id">
+                        <form autocomplete="off" class="form" action="" method="post" id="form-newsletter-id">
                             <div class="content_newsletter row">
                                 <div class="input_main col-sm-9">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
@@ -105,7 +105,7 @@ if(isset($_POST['newsletter']))
                                     </svg>
                                     <input type="email" name="email" placeholder="Your Email">
                                 </div>
-                                <input class="submit-newsletter" type="submit" value="S'inscrire" name="newsletter">
+                                <input class="submit-btn" type="submit" value="S'inscrire" name="newsletter">
                             </div>
                         </form>
                     </div>

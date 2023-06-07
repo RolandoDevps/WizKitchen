@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- style -->
-    <link rel="stylesheet" type="text/css" href="./dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="../font/css/fontawesome-all.min.css">
     <!--========================================Bootstrap====================================-->
     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
