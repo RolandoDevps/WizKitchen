@@ -26,3 +26,26 @@
     background-color: transparent;
     background-image: url(../images/bg/fond-2.png);
 }
+.card_description h2 {
+    --z-index: 35;
+    background-color: transparent;
+    color: #c25a3a;
+    font-family: 'Superclarendon-Bold', Helvetica;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.00px;
+    line-height: normal;
+    mix-blend-mode: normal;
+    opacity: 1;
+    text-align: left;
+    margin-bottom: -35px;
+    margin-top: 80px;
+}
+
+
+
+
+
+
+

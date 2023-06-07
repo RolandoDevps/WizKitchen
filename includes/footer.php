@@ -135,13 +135,13 @@ if(isset($_POST['newsletter']))
                     </div>
                 </div>
                 <div class="container_social_link">
-                    <a href="#">
+                    <a href="https://www.instagram.com/p/CpiJUEtINKR/">
                         <img src="assets/images/social/insta.png" alt="">
                     </a>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/wizkitchen-france-b869b0273/">
                         <img src="assets/images/social/lind.svg" alt="">
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/profile.php?id=100091818771987">
                         <img src="assets/images/social/facebk.svg" alt="">
                     </a>
                 </div>

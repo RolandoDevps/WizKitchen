@@ -5,11 +5,11 @@
       <div class="container">
         <div class="content_item">
 
-          <div class="custo-card">
-            <div class="card_img">
+          <div class="custo-card card-atelier row">
+            <div class="card_img col-sm-12 col-md-6">
               <img src="assets/images/items/1.png" alt="">
             </div>
-            <div class="card_description">
+            <div class="card_description col-md-6 col-sm-12">
               <h2>Votre plat maison sera bien plus réconfortant qu’un plat commandé !</h2>
               <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
                 specimen book. It has survived not only five centuries, but also the leap
@@ -20,24 +20,24 @@
             </div>
           </div>
 
-          <div class="custo-card inverse mt-11">
-            <div class="card_description">
+          <div class="custo-card card-atelier row inverse mt-11">
+            <div class="card_img col-md-6 col-sm-12">
+              <img src="assets/images/items/2.png" alt="">
+            </div>
+            <div class="card_description col-md-6 col-sm-12">
               <h2>Mangez sain au quotidien devient simple et motivant !</h2>
               <p>dummy text ever Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to</p>
               <div class="container_btn_link">
                 <a href="#" class="btn_link color_marron">Découvrir</a>
               </div>
             </div>
-            <div class="card_img">
-              <img src="assets/images/items/2.png" alt="">
-            </div>
           </div>
 
-          <div class="custo-card mt-11">
-            <div class="card_img">
+          <div class="custo-card card-atelier row mt-11">
+            <div class="card_img col-md-6 col-sm-12">
               <img src="assets/images/items/3.png" alt="">
             </div>
-            <div class="card_description">
+            <div class="card_description col-md-6 col-sm-12">
               <h2 class="font-37">Plus on est de fous, plus on rit !</h2>
               <p> Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to</p>
               <div class="container_btn_link">
@@ -76,15 +76,15 @@
       <div class="container">
         <div class="content_item">
 
-          <div class="custo-card inverse mt-35">
-            <div class="card_description">
+          <div class="custo-card card-atelier row inverse mt-35">
+            <div class="card_description col-sm-12 col-md-6">
               <h2>Pas d’inspiration pour vos plats ?</h2>
               <p>dummy text ever Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to</p>
               <div class="container_btn_link">
                 <a href="#" class="btn_link color_marron">Découvrir</a>
               </div>
             </div>
-            <div class="card_img">
+            <div class="card_img col-sm-12 col-md-6">
               <img src="assets/images/items/4.png" alt="">
             </div>
           </div>

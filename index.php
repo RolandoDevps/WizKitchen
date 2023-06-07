@@ -14,9 +14,10 @@
     <link href="images/favicon.png" rel="shortcut icon" type="image/png">
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="assets/css/margin.css">
     <link rel="stylesheet" type="text/css" href="assets/css/customize.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+     <!--========================================FontAwesome====================================-->
 	<link rel="stylesheet" type="text/css" href="font/css/fontawesome-all.min.css">
     <!--========================================Bootstrap====================================-->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
