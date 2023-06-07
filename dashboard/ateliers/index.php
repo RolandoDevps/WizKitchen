@@ -62,16 +62,8 @@
                 <form class="form-add-atelier" autocomplete="off" action="" method="post">
                     <div class="content_atelier row">
                         <div class="input_main col-sm-5">
-                            <i class="fa fa-user mr-3"></i>
-                            <input type="text" id="author" name="author" placeholder="Author name">
-                        </div>
-                        <div class="input_main col-sm-5">
-                            <i class="fa fa-paper-plane mr-3"></i>
-                            <input type="text" id="subject" name="subject" placeholder="Subject">
-                        </div>
-                        <div class="input_main col-sm-1">
-                            <i class="fa fa-hand-paper mr-3"></i>
-                            <input type="number" id="rating" name="rating" placeholder="__ / 5">
+                            <i class="fa fa-tags mr-3"></i>
+                            <input type="text" id="label" name="label" placeholder="Libelle de l'atelier">
                         </div>
                     </div>
                     <div class="content_atelier row mt-3">
@@ -79,7 +71,7 @@
                             Drag & drop image
                         </div>
                         <div class="col-sm-9">
-                            <textarea placeholder="Commentaire" name="content" id="content"></textarea>
+                            <textarea placeholder="Description" name="description" id="description"></textarea>
                         </div>
                     </div>
                     <input class="submit-btn mt-2" type="submit" value="Ajouter" name="submit-add-atelier">
@@ -93,9 +85,8 @@
                         <thead>
                         <tr>
                             <th scope="col" width="50">#id</th>
-                            <th scope="col">Auteur</th>
-                            <th scope="col">Sujet</th>
-                            <th scope="col">Notation</th>
+                            <th scope="col">Libellé</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Date d'ajout</th>
                             <th scope="col" class="table-action">Actions</th>
                         </tr>
@@ -110,9 +101,8 @@
                             ?>
                             <tr>
                                 <th scope="row"><?php echo $atelier['id']; ?></th>
-                                <td><?php echo $atelier['author']; ?></td>
-                                <td><?php echo $atelier['subject']; ?></td>
-                                <td><?php echo $atelier['rating']; ?></td>
+                                <td><?php echo $atelier['label']; ?></td>
+                                <td><?php echo $atelier['description']; ?></td>
                                 <td><?php echo $atelier['date_add']; ?></td>
                                 <td align="right">
                                     <i id="<?php echo $atelier['id']; ?>"
@@ -157,19 +147,15 @@
             $('.form-add-atelier').submit(function (e) {
                 e.preventDefault();
                 // var new_task = $('.add-new-task input[name=new-task]').val();
-                var content = $('#content').val();
-                var author = $('#author').val();
-                var rating = $('#rating').val();
-                var subject = $('#subject').val();
+                var label = $('#label').val();
+                var description = $('#description').val();
                 console.log(`{
-                    ${content}, ${author}, ${rating}, ${subject}
+                    ${label}, ${description}
                 }`)
-                if (content !== ''&& author !== '' && rating >= 0 && subject !== '') {
+                if (label !== ''&& description !== '') {
                     $.post('traitements/add-atelier.php', {
-                        content: content,
-                        author: author,
-                        rating: rating,
-                        subject: subject,
+                        label: label,
+                        description: description,
                     }, function (data) {
                         if(data === 'failed'){
                             $('.msg-success').text('')

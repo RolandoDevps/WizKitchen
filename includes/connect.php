@@ -1,7 +1,7 @@
 <?php
     $dsn = "mysql:host=localhost;dbname=db_wizkitchen";
     $user = "root";
-    $password = "";
+    $password = "admin";
 
     $option = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

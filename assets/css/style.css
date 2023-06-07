@@ -776,7 +776,7 @@ h2.span0-Yx7w3G {
     background: none;
     border: none;
     outline: none;
-    color: #a2a2a2;
+    /*color: #a2a2a2;*/
     font-size: 1rem;
 }
 
@@ -817,7 +817,7 @@ textarea {
     background-color: #fff;
     font-size: 16px;
     resize: none;
-    color: #eeeeff;
+    /*color: #eeeeff;*/
     outline: none;
 }
 
