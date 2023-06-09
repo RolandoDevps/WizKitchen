@@ -59,7 +59,7 @@
             </center>
 
             <div class="wrap_form_producteur">
-                 <form class="form-add-producteur" autocomplete="off" action="" method="post">
+                 <form class="form-add-blog" autocomplete="off" action="" method="post">
                     <div class="content_atelier row">
                         <div class="input_main col-sm-5">
                             <i class="fa fa-tags mr-3"></i>
