@@ -3,7 +3,7 @@
     $description = $_POST["description"];
  
 
-    $message =  'failed';
+    $message = 'failed';
 
     if(!empty(trim($label)) && !empty(trim($description))){
         $date_add = new DateTime('now');
