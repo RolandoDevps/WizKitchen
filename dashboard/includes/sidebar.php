@@ -23,7 +23,7 @@
                             class="fas fa-comment-dots mr-2"></i>ChatBot</a>
                 <a href="./../dashboard/reservations" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-save mr-2"></i>Reservations</a>
-                <a href="#" class="list-group-item list-group-item-action text-danger fw-bold"><i
+                <a href="../" class="list-group-item list-group-item-action text-danger fw-bold"><i
                             class="fas fa-power-off mr-2"></i>Logout</a>
             </div>
         </div>

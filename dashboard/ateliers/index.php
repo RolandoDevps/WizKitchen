@@ -30,7 +30,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user mr-2"></i>John Doe
+                            <i class="fas fa-user mr-2"></i>Ariel
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -67,8 +67,9 @@
                         </div>
                     </div>
                     <div class="content_atelier row mt-3">
-                        <div class="col-sm-2 wrap-inage mr-2">
-                            Drag & drop image
+                        <div class="col-sm-2 wrap-inage fileUploadInput mr-2">
+<!--                            Drag and drop or Select image to upload:-->
+                            <input type="file" name="fichier" id="fichier">
                         </div>
                         <div class="col-sm-9">
                             <textarea placeholder="Description" name="description" id="description"></textarea>
@@ -86,7 +87,7 @@
                         <tr>
                             <th scope="col" width="50">#id</th>
                             <th scope="col">Libellé</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Date d'ajout</th>
                             <th scope="col" class="table-action">Actions</th>
                         </tr>
@@ -102,7 +103,7 @@
                             <tr>
                                 <th scope="row"><?php echo $atelier['id']; ?></th>
                                 <td><?php echo $atelier['label']; ?></td>
-                                <td><?php echo $atelier['description']; ?></td>
+                                <td><img src="../../uploads/<?php echo $atelier['image_url']; ?>" height="100" width="100"  alt="img"/></td>
                                 <td><?php echo $atelier['date_add']; ?></td>
                                 <td align="right">
                                     <i id="<?php echo $atelier['id']; ?>"
@@ -121,6 +122,32 @@
                 </div>
             </div>
 
+            <!--Modal de suppression-->
+            <div class="container-custom-modal">
+                <div class="wrap-custom-modal">
+                    <div class="custom-modal-header">
+                        <h3 class="custom-modal-header-title">Confirmer la suppression</h3>
+                    </div>
+                    <div class="custom-modal-content">
+                        <p class="custom-modal-header-subtitle">Voulez-vous vraiment supprimer la ressource ?</p>
+                    </div>
+                    <div class="custom-modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="toggleModal()">
+                            Annuler
+                        </button>
+                        <button type="button" class="btn btn-danger confirm-delete">
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Modal de détail sur l'atelier-->
+
+
+        <div class="overlay-custom-modal"></div>
+
         </div>
     </div>
 
@@ -129,16 +156,21 @@
     <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
+        function toggleModal() {
+            $('.container-custom-modal').toggleClass('open')
+        }
         add_atelier();
         delete_atelier();
         function delete_atelier() {
             $('.delete-atelier').click(function () {
                 var id = $(this).attr('id');
-
-                $.post('traitements/delete-atelier.php', {atelier_id: id}, function () {
-                    setTimeout(function(){// wait for 5 secs(2)
-                        location.reload();
-                    }, 2000);
+                toggleModal();
+                $('.confirm-delete').click(function () {
+                    $.post('traitements/delete-atelier.php', {atelier_id: id}, function () {
+                        setTimeout(function(){// wait for 5 secs(2)
+                            location.reload();
+                        }, 2000);
+                    })
                 })
             })
         }
@@ -149,27 +181,49 @@
                 // var new_task = $('.add-new-task input[name=new-task]').val();
                 var label = $('#label').val();
                 var description = $('#description').val();
-                console.log(`{
-                    ${label}, ${description}
-                }`)
-                if (label !== ''&& description !== '') {
-                    $.post('traitements/add-atelier.php', {
-                        label: label,
-                        description: description,
-                    }, function (data) {
-                        if(data === 'failed'){
-                            $('.msg-success').text('')
-                            $('.msg-error').text('Renseignez tous les champs !');
+                var property = document.getElementById('fichier').files[0];
+
+                if(property){
+                    var image_name = property.name;
+                    var image_extension = image_name.split('.').pop().toLowerCase();
+                    if(jQuery.inArray(image_extension,['jpg', 'jpeg', 'png', 'gif']) === -1){
+                        alert("Fichier image invalide");
+                    }
+                }
+
+                var form_data = new FormData();
+                form_data.append("label",label);
+                form_data.append("description",description);
+                form_data.append("fichier",property);
+
+                if (label !== ''&& description !== '' && image_name !== '') {
+                    $.ajax({
+                        url:'traitements/add-atelier.php',
+                        method:'POST',
+                        data:form_data,
+                        contentType:false,
+                        cache:false,
+                        processData:false,
+                        success:function(data){
+                            data = JSON.parse(data);
+                            console.log(data);
+                            if(data["message" ]=== 'failed'){
+                                $('.msg-success').text('')
+                                $('.msg-error').text('Renseignez tous les champs !');
+                            }
+                            else if(data["messageFile" ] === 'failed'){
+                                $('.msg-success').text('')
+                                $('.msg-error').text('Fichier image invalide!');
+                            }
+                            if(data["message" ] === "success"){
+                                $('.msg-error').text('')
+                                $('.msg-success').text('Enregistrement effectué avec succès');
+                                setTimeout(function(){// wait for 5 secs(2)
+                                    location.reload();
+                                }, 2000);
+                            }
                         }
-                        if(data === "success"){
-                            $('.msg-error').text('')
-                            $('#email').val('');
-                            $('.msg-success').text('Enregistrement effectué avec succès');
-                            setTimeout(function(){// wait for 5 secs(2)
-                                location.reload();
-                            }, 2000);
-                        }
-                    })
+                    });
                 }
                 else $('.msg-error').text('Renseignez tous les champs !');
             })

@@ -119,3 +119,96 @@
         margin-left: -15rem;
     }
 }
+
+.fileUploadInput input {
+    position: relative;
+    z-index: 1;
+    padding: 0 gap(m);
+    width: 100%;
+    height: 100%;
+    border: 1px solid #323262;
+    border-radius: 3px;
+    font-family: arial, sans-serif;
+    font-size: 1rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.fileUploadInput input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+    margin-left: 10px;
+    padding: 0;
+    height: 50px;
+    width: 0;
+}
+
+
+/*************************** Modal Overlay ************************/
+.container-custom-modal.open .wrap-custom-modal {
+    top: 100px;
+}
+
+.overlay-custom-modal {
+    position: fixed;
+    height: 1000vh;
+    top: 0;
+    right: -100%;
+    width: 200%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+.container-custom-modal {
+    width: 100%;
+
+.wrap-custom-modal {
+    position: fixed;
+    top: -100%;
+    min-width: 500px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px 30px;
+    transition: all 0.5s ease;
+    z-index: 999999;
+    transform: translateX(50%);
+    right: 50%;
+    border-radius: 7px;
+
+.custom-modal-header {
+h3.custom-modal-header-subtitle {
+    color: #1f2836a6;
+    font-size: var(--default-size);;
+    font-weight: 500;
+}
+
+h3.custom-modal-header-title {
+    color: #1f2836;
+    font-size: var(--medium-size);
+    font-weight: 600;
+}
+}
+
+.custom-modal-content {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.custom-modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-modal-footer .app-btn {
+    width: 48% !important;
+}
+}
+}
+
+.container-custom-modal.open ~ .overlay-custom-modal {
+    opacity: 1;
+    right: 0;
+    pointer-events: auto;
+}
