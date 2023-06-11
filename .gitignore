@@ -1,3 +1,7 @@
 .idea
 .idea/
 ./includes/connect.php
+includes/connect.php
+/includes/connect.php
+uploads/
+uploads/*

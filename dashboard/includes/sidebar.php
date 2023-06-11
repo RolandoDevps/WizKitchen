@@ -13,7 +13,7 @@
                 <i class="fa-sharp fa-light fa-kitchen-set"></i>
                 <a href="./../dashboard/producteurs" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-user mr-2"></i>Producteurs</a>
-                <a href="./../dashboard/blog" class="list-group-item list-group-item-action second-text fw-bold"><i
+                <a href="./../dashboard/blogs" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-capsules mr-2"></i>Blogs</a>
                 <a href="./../dashboard/avis" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-feather mr-2"></i>Avis</a>
