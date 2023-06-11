@@ -51,13 +51,13 @@ if(isset($_POST['newsletter']))
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'rolandmartialkuate@gmail.com';                     //SMTP username
-            $mail->Password   = 'gevvahebzkpqlknt';                               //SMTP password
+            $mail->Username   = 'pharelngoualem@gmail.com';                     //SMTP username
+            $mail->Password   = 'thaztxrhbhhkrwij';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('rolandmartialkuate@gmail.com', 'Roland KUATE');                         // Adresse e-mail de l'expéditeur
+            $mail->setFrom('pharelngoualem@gmail.com', 'pharelngoualem');                         // Adresse e-mail de l'expéditeur
             $mail->addAddress($_POST['email']);         // Adresse e-mail du destinataire
             $mail->Subject='Confirmation inscription à la newsletter';
             $mail->Body = 'Votre inscription à la newsletter a été éffectuée avec succès </br>

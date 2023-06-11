@@ -30,7 +30,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user mr-2"></i>Ariel
+                            <i class="fas fa-user mr-2"></i>John Doe
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -58,15 +58,15 @@
                 </div>
             </center>
 
-            <div class="wrap_form_producteur">
-                 <form class="form-add-producteur" autocomplete="off" action="" method="post">
-                    <div class="content_atelier row">
+            <div class="wrap_form_blog">
+                 <form class="form-add-blog" autocomplete="off" action="" method="post">
+                    <div class="content_blog row">
                         <div class="input_main col-sm-5">
                             <i class="fa fa-tags mr-3"></i>
-                            <input type="text" id="label" name="label" placeholder="Libelle du producteur">
+                            <input type="text" id="label" name="label" placeholder="Libelle du blog">
                         </div>
                     </div>
-                    <div class="content_atelier row mt-3">
+                    <div class="content_blog row mt-3">
                         <div class="col-sm-2 wrap-inage mr-2">
                             Drag & drop image
                         </div>
@@ -74,7 +74,7 @@
                             <textarea placeholder="Description" name="description" id="description"></textarea>
                         </div>
                     </div>
-                    <input class="submit-btn mt-2" type="submit" value="Ajouter" name="submit-add-producteur">
+                    <input class="submit-btn mt-2" type="submit" value="Ajouter" name="submit-add-blog">
                 </form>
             </div>
 
@@ -88,27 +88,29 @@
                             <th scope="col">Libellé</th>
                             <th scope="col">Description</th>
                             <th scope="col">Date d'ajout</th>
+                            <th scope="col">Like</th>
                             <th scope="col" class="table-action">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
                         require '../../includes/connect.php';
-                        $response = $bdd->query('SELECT * FROM db_wizkitchen.producteurs ORDER BY id DESC LIMIT 10');
+                        $response = $bdd->query('SELECT * FROM db_wizkitchen.blogs ORDER BY id DESC LIMIT 10');
 
                         // On affiche chaque entrée une à une
-                        while ($producteur = $response->fetch()) {
+                        while ($blog = $response->fetch()) {
                             ?>
                             <tr>
-                                <th scope="row"><?php echo $producteur['id']; ?></th>
-                                <td><?php echo $producteur['label']; ?></td>
-                                <td><?php echo $producteur['description']; ?></td>
-                                <td><?php echo $producteur['date_add']; ?></td>
+                                <th scope="row"><?php echo $blog['id']; ?></th>
+                                <td><?php echo $blog['label']; ?></td>
+                                <td><?php echo $blog['description']; ?></td>
+                                <td><?php echo $blog['date_add']; ?></td>
+                                <td><?php echo $blog['is_like']; ?></td>
                                 <td align="right">
-                                    <i id="<?php echo $producteur['id']; ?>"
+                                    <i id="<?php echo $blog['id']; ?>"
                                        class="fas fa-eye text-info table-action-item"></i>
-                                    <i id="<?php echo $producteur['id']; ?>" class="fas fa-edit mx-4 primary-text table-action-item"></i>
-                                    <i id="<?php echo $producteur['id']; ?>" class="fas fa-trash text-danger table-action-item delete-producteur"></i>
+                                    <i id="<?php echo $blog['id']; ?>" class="fas fa-edit mx-4 primary-text table-action-item"></i>
+                                    <i id="<?php echo $blog['id']; ?>" class="fas fa-trash text-danger table-action-item delete-blog"></i>
                                 </td>
                             </tr>
                             <?php
@@ -129,13 +131,13 @@
     <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
-        add_producteur();
-        delete_producteur();
-        function delete_producteur() {
-            $('.delete-producteur').click(function () {
+        add_blog();
+        delete_blog();
+        function delete_blog() {
+            $('.delete-blog').click(function () {
                 var id = $(this).attr('id');
 
-                $.post('traitements/delete-producteur.php', {producteur_id: id}, function () {
+                $.post('traitements/delete-blog.php', {blog_id: id}, function () {
                     setTimeout(function(){// wait for 5 secs(2)
                         location.reload();
                     }, 2000);
@@ -143,19 +145,21 @@
             })
         }
 
-        function add_producteur() {
-            $('.form-add-producteur').submit(function (e) {
+        function add_blog() {
+            $('.form-add-blog').submit(function (e) {
                 e.preventDefault();
                 // var new_task = $('.add-new-task input[name=new-task]').val();
                 var label = $('#label').val();
                 var description = $('#description').val();
+                 //var is_like = $('#is_like').val();
                 console.log(`{
-                    ${label}, ${description}
+                    ${label}, ${description},
                 }`)
                 if (label !== '' && description !== '') {
-                    $.post('traitements/add-producteur.php', {
+                    $.post('traitements/add-blog.php', {
                         label: label,
                         description: description,
+                       // is_like:is_like,
                     }, function (data) {
                         if(data === 'failed'){
                             $('.msg-success').text('')

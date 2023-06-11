@@ -28,8 +28,26 @@ create table ateliers
 )collate = utf8mb4_general_ci;
 
 -- ici on aura le script de creation de la table Producteur
-
+create table producteurs
+(
+    id          int auto_increment,
+    label       VARCHAR(255) null,
+    description TEXT         null,
+    date_add    DATETIME     null,
+    image_url   VARCHAR(255) null,
+    constraint ateliers_pk primary key (id)
+)collate = utf8mb4_general_ci;
 
 -- ici on aura le script de creation de la table Blog
+create table bloc
+(
+    id          int auto_increment,
+    label       VARCHAR(255) null,
+    description TEXT         null,
+    date_add    DATETIME     null,
+    image_url   VARCHAR(255) null,
+    is_like    boolean null,
+    constraint ateliers_pk primary key (id)
+)collate = utf8mb4_general_ci;
 
 
