@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-lg navbar-light py-4 px-4 d-flex justify-content-between">
             <div class="d-flex align-items-center">
                 <i class="fas fa-align-left primary-text mr-2 fs-4" id="menu-toggle"></i>
-                <h2 class="fs-2 m-0">Dashboard / Producteurs</h2>
+                <h2 class="fs-2 m-0">Dashboard / BLogs</h2>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
