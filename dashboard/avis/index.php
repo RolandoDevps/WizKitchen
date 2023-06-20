@@ -75,8 +75,7 @@
                         </div>
                     </div>
                     <div class="content_avis row mt-3">
-                        <div class="col-sm-2 wrap-inage mr-2">
-                            inséré une image ici
+                        <div class="col-sm-2 wrap-inage fileUploadInput mr-2">
                            <!-- Drag and drop or Select image to upload:-->
                            <input type="file" name="fichier" id="fichier"> 
                         </div>
@@ -99,6 +98,7 @@
                             <th scope="col">Sujet</th>
                             <th scope="col">Notation</th>
                             <th scope="col">Date d'ajout</th>
+                            <th scope="col">Image</th>
                             <th scope="col" class="table-action">Actions</th>
                         </tr>
                         </thead>
@@ -116,6 +116,7 @@
                                 <td><?php echo $avis['subject']; ?></td>
                                 <td><?php echo $avis['rating']; ?></td>
                                 <td><?php echo $avis['date_add']; ?></td>
+                                <td><img src="../../uploads/<?php echo $blog['image_url']; ?>" height="100" width="100"  alt="img"/></td>
                                 <td align="right">
                                     <i id="<?php echo $avis['id']; ?>"
                                        class="fas fa-eye text-info table-action-item"></i>
@@ -132,7 +133,26 @@
                     </table>
                 </div>
             </div>
-
+ <!--Modal de suppression-->
+ <div class="container-custom-modal">
+                <div class="wrap-custom-modal">
+                    <div class="custom-modal-header">
+                        <h3 class="custom-modal-header-title">Confirmer la suppression</h3>
+                    </div>
+                    <div class="custom-modal-content">
+                        <p class="custom-modal-header-subtitle">Voulez-vous vraiment supprimer la ressource ?</p>
+                    </div>
+                    <div class="custom-modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="toggleModal()">
+                            Annuler
+                        </button>
+                        <button type="button" class="btn btn-danger confirm-delete">
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-custom-modal"></div>
         </div>
     </div>
 
@@ -141,51 +161,78 @@
     <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
+          function toggleModal() {
+            $('.container-custom-modal').toggleClass('open')
+          }
         add_avis();
         delete_avis();
         function delete_avis() {
             $('.delete-avis').click(function () {
                 var id = $(this).attr('id');
-
-                $.post('traitements/delete-avis.php', {avis_id: id}, function () {
-                    setTimeout(function(){// wait for 5 secs(2)
-                        location.reload();
-                    }, 2000);
+                toggleModal();
+                $('.confirm-delete').click(function () {
+                    $.post('traitements/delete-avis.php', {avis_id: id}, function () {
+                        setTimeout(function(){// wait for 5 secs(2)
+                            location.reload();
+                        }, 2000);
+                    })
                 })
             })
         }
 
         function add_avis() {
+            console.log("inside");
             $('.form-add-avis').submit(function (e) {
                 e.preventDefault();
                 // var new_task = $('.add-new-task input[name=new-task]').val();
                 var content = $('#content').val();
                 var author = $('#author').val();
-                var rating = $('#rating').val();
                 var subject = $('#subject').val();
-                console.log(`{
-                    ${content}, ${author}, ${rating}, ${subject}
-                }`)
-                if (content !== ''&& author !== '' && rating >= 0 && subject !== '') {
-                    $.post('traitements/add-avis.php', {
-                        content: content,
-                        author: author,
-                        rating: rating,
-                        subject: subject,
-                    }, function (data) {
-                        if(data === 'failed'){
-                            $('.msg-success').text('')
-                            $('.msg-error').text('Renseignez tous les champs !');
+                var rating = $('#rating').val();
+                var property = document.getElementById('fichier').files[0];
+                if(property){
+                    var image_name = property.name;
+                    var image_extension = image_name.split('.').pop().toLowerCase();
+                    if(jQuery.inArray(image_extension,['jpg', 'jpeg', 'png', 'gif']) === -1){
+                        alert("Fichier image invalide");
+                    }
+                }
+                var form_data = new FormData();
+                form_data.append("content",content);
+                form_data.append("author",author);
+                form_data.append("subject",subject);
+                form_data.append("rating",rating);
+                form_data.append("fichier",property);
+
+                if (content !== ''&& author !== '' && rating >= 0 && subject !== '' && image_name !== '') {
+                    $.ajax({
+                        url: 'traitements/add-avis.php',
+                        method: 'POST',
+                        data: form_data,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (data) {
+                            data = JSON.parse(data);
+                            console.log(data);
+                            if(data["message" ]=== 'failed'){
+                                $('.msg-success').text('')
+                                $('.msg-error').text('Renseignez tous les champs !');
+                            }
+                            else if(data["messageFile" ] === 'failed'){
+                                $('.msg-success').text('')
+                                $('.msg-error').text('Fichier image invalide!');
+                            }
+                            if(data["message" ] === "success"){
+                                $('.msg-error').text('')
+                                $('.msg-success').text('Enregistrement effectué avec succès');
+                                setTimeout(function(){// wait for 5 secs(2)
+                                    location.reload();
+                                }, 2000);
+                            }
                         }
-                        if(data === "success"){
-                            $('.msg-error').text('')
-                            $('#email').val('');
-                            $('.msg-success').text('Enregistrement effectué avec succès');
-                            setTimeout(function(){// wait for 5 secs(2)
-                                location.reload();
-                            }, 2000);
-                        }
-                    })
+                    
+                    });
                 }
                 else $('.msg-error').text('Renseignez tous les champs !');
             })
