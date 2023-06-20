@@ -163,7 +163,7 @@
 
 .container-custom-modal {
     width: 100%;
-
+}
 .wrap-custom-modal {
     position: fixed;
     top: -100%;
@@ -176,8 +176,7 @@
     transform: translateX(50%);
     right: 50%;
     border-radius: 7px;
-
-.custom-modal-header {
+}
 h3.custom-modal-header-subtitle {
     color: #1f2836a6;
     font-size: var(--default-size);;
@@ -188,7 +187,6 @@ h3.custom-modal-header-title {
     color: #1f2836;
     font-size: var(--medium-size);
     font-weight: 600;
-}
 }
 
 .custom-modal-content {
@@ -204,9 +202,6 @@ h3.custom-modal-header-title {
 .custom-modal-footer .app-btn {
     width: 48% !important;
 }
-}
-}
-
 .container-custom-modal.open ~ .overlay-custom-modal {
     opacity: 1;
     right: 0;
