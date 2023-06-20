@@ -76,7 +76,9 @@
                     </div>
                     <div class="content_avis row mt-3">
                         <div class="col-sm-2 wrap-inage mr-2">
-                            Drag & drop image
+                            inséré une image ici
+                           <!-- Drag and drop or Select image to upload:-->
+                           <input type="file" name="fichier" id="fichier"> 
                         </div>
                         <div class="col-sm-9">
                             <textarea placeholder="Commentaire" name="content" id="content"></textarea>

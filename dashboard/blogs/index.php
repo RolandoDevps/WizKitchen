@@ -30,7 +30,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user mr-2"></i>John Doe
+                            <i class="fas fa-user mr-2"></i>Ariel
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -65,10 +65,16 @@
                             <i class="fa fa-tags mr-3"></i>
                             <input type="text" id="label" name="label" placeholder="Libelle du blog">
                         </div>
+             <div class="input_main col-sm-1">
+              <i class="fa fa-hand-paper mr-3"></i>
+            <input type="number" id="rating" name="rating" placeholder="__ / 5">
+           </div>
+
                     </div>
                     <div class="content_blog row mt-3">
-                        <div class="col-sm-2 wrap-inage mr-2">
-                            Drag & drop image
+                        <div class="col-sm-2 wrap-inage fileUploadInput mr-2">
+                         <!-- Drag and drop or Select image to upload:-->
+                         <input type="file" name="fichier" id="fichier">
                         </div>
                         <div class="col-sm-9">
                             <textarea placeholder="Description" name="description" id="description"></textarea>
@@ -89,6 +95,7 @@
                             <th scope="col">Description</th>
                             <th scope="col">Date d'ajout</th>
                             <th scope="col">Like</th>
+                            <th scope="col">Image</th>
                             <th scope="col" class="table-action">Actions</th>
                         </tr>
                         </thead>
@@ -106,6 +113,8 @@
                                 <td><?php echo $blog['description']; ?></td>
                                 <td><?php echo $blog['date_add']; ?></td>
                                 <td><?php echo $blog['is_like']; ?></td>
+                                <td><img src="../../uploads/<?php echo $blog['image_url']; ?>" height="100" width="100"  alt="img"/></td>
+                                
                                 <td align="right">
                                     <i id="<?php echo $blog['id']; ?>"
                                        class="fas fa-eye text-info table-action-item"></i>
@@ -122,7 +131,26 @@
                     </table>
                 </div>
             </div>
-
+ <!--Modal de suppression-->
+ <div class="container-custom-modal">
+                <div class="wrap-custom-modal">
+                    <div class="custom-modal-header">
+                        <h3 class="custom-modal-header-title">Confirmer la suppression</h3>
+                    </div>
+                    <div class="custom-modal-content">
+                        <p class="custom-modal-header-subtitle">Voulez-vous vraiment supprimer la ressource ?</p>
+                    </div>
+                    <div class="custom-modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="toggleModal()">
+                            Annuler
+                        </button>
+                        <button type="button" class="btn btn-danger confirm-delete">
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-custom-modal"></div>
         </div>
     </div>
 
@@ -131,16 +159,21 @@
     <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
+        function toggleModal() {
+            $('.container-custom-modal').toggleClass('open')
+        }
         add_blog();
         delete_blog();
         function delete_blog() {
             $('.delete-blog').click(function () {
                 var id = $(this).attr('id');
-
-                $.post('traitements/delete-blog.php', {blog_id: id}, function () {
-                    setTimeout(function(){// wait for 5 secs(2)
-                        location.reload();
-                    }, 2000);
+                toggleModal();
+                $('.confirm-delete').click(function () {
+                    $.post('traitements/delete-blog.php', {blog_id: id}, function () {
+                        setTimeout(function(){// wait for 5 secs(2)
+                            location.reload();
+                        }, 2000);
+                    })
                 })
             })
         }
@@ -151,31 +184,52 @@
                 // var new_task = $('.add-new-task input[name=new-task]').val();
                 var label = $('#label').val();
                 var description = $('#description').val();
-                 //var is_like = $('#is_like').val();
-                console.log(`{
-                    ${label}, ${description},
-                }`)
-                if (label !== '' && description !== '') {
-                    $.post('traitements/add-blog.php', {
-                        label: label,
-                        description: description,
-                       // is_like:is_like,
-                    }, function (data) {
-                        if(data === 'failed'){
-                            $('.msg-success').text('')
-                            $('.msg-error').text('Renseignez tous les champs !');
-                        }
-                        if(data === "success"){
-                            $('.msg-error').text('')
-                            $('#email').val('');
-                            $('.msg-success').text('Enregistrement effectué avec succès');
-                            setTimeout(function(){// wait for 5 secs(2)
-                                location.reload();
-                            }, 2000);
-                        }
-                    })
+                var property = document.getElementById('fichier').files[0];
+               
+                if(property){
+                    var image_name = property.name;
+                    var image_extension = image_name.split('.').pop().toLowerCase();
+                    if(jQuery.inArray(image_extension,['jpg', 'jpeg', 'png', 'gif']) === -1){
+                        alert("Fichier image invalide");
+                    }
                 }
-                else $('.msg-error').text('Renseignez tous les champs !');
+
+                var form_data = new FormData();
+                form_data.append("label",label);
+                form_data.append("description",description);
+                form_data.append("fichier",property);
+             
+               if (label !== ''&& description !== '' && image_name !== '') {
+                $.ajax({
+                        url: 'traitements/add-blog.php',
+                        method: 'POST',
+                        data: form_data,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (data) {
+                            data = JSON.parse(data);
+                            console.log(data);
+                            if(data["message" ]=== 'failed'){
+                                $('.msg-success').text('')
+                                $('.msg-error').text('Renseignez tous les champs !');
+                            }
+                            else if(data["messageFile" ] === 'failed'){
+                                $('.msg-success').text('')
+                                $('.msg-error').text('Fichier image invalide!');
+                            }
+                            if(data["message" ] === "success"){
+                                $('.msg-error').text('')
+                                $('.msg-success').text('Enregistrement effectué avec succès');
+                                setTimeout(function(){// wait for 5 secs(2)
+                                    location.reload();
+                                }, 2000);
+                            }
+                        }
+                    
+                    });
+                }
+                  else $('.msg-error').text('Renseignez tous les champs !');
             })
         }
 

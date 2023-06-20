@@ -1,6 +1,6 @@
 <?php 
 $title_header = "";
-$para_header = "dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap";
+$para_header = "Notre atelier de batch-cooking est situé dans les Cuisine Chef Square à bastille sur court au 40, rue Sedaine (code porte 35801), 75011 Paris. Notre équipe sera ravie de vous y faire découvrir les joies du batch-cooking et de la cuisine en groupe.";
 
 include('includes/header2.php'); 
 
@@ -17,7 +17,7 @@ include('includes/header2.php');
         </div>
         <div class="card_description ml-12">
           <h2>À la découverte de nos produits</h2>
-          <p>Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to</p>
+          <p>L’équipe Wiz s'implique au maximum pour respecter les deux choses les plus importantes à nos yeux, votre corps et notre planète ! C’est pourquoi nous collaborons avec de petits producteurs qui proposent des produits bio, qui auraient pu être invendus, des associations locales ou autres organismes qui souhaitent faire évoluer les habitudes de consommation avec nous.</p>
           <div class="container_btn_link">
             <a href="#" class="btn_link color_marron">Découvrir</a>
           </div>
@@ -50,7 +50,7 @@ include('includes/header2.php');
 
         <span class="content_span text-center zindex-50 mt-20">
             <h2 class="span0-Yx7w3G">Envie de manger sain au quotidien ?<br></h2>
-            <span class="span1-Yx7w3G">dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</span>
+            <span class="span1-Yx7w3G">Le batch cooking peut vous aider à maintenir une alimentation saine, et pas qu’une semaine. Moins de flemme et plus de goûts! En participant aux activités organisées par notre équipe, vous apprendrez à cuisiner sainement et efficacement. Petit plus on vous épargne l’effort de la vaisselle, dites pas merci ça nous fait plaisir.</span>
             <div class="container_btn_link">
                 <a href="#" class="btn_link color_marron">Découvrir</a>
             </div>
@@ -104,7 +104,9 @@ include('includes/header2.php');
         </div>
         <div class="card_description_avis">
           <h2>Pas d’iUn gain de temps</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
+          <p>"Le batch-cooking a complètement trans
+formé ma routine culinaire. Des repas savoureux, une organisation simplifiée et un gain de temps précieux. Je ne peux plus m'en passer !"
+</p>
         </div>
       </div>
 
@@ -124,7 +126,7 @@ include('includes/header2.php');
         </div>
         <div class="card_description_avis">
           <h2>Des plats équilibrés</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
+          <p>Grâce au batch-cooking proposé par wizkitchen nom d'entreprise], je redécouvre le plaisir de manger sainement sans passer des heures en cuisine. Une solution pratique et délicieuse pour des repas équilibrés au quotidien.</p>
         </div>
       </div>
 
@@ -144,7 +146,7 @@ include('includes/header2.php');
         </div>
         <div class="card_description_avis">
           <h2>Économique et écologique !</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
+          <p> Les services de batch-cooking de wizkitchen ont révolutionné ma façon de cuisiner. Des plats délicieux prêts en un clin d'œil, parfait pour les journées chargées !</p>
         </div>
       </div>
 

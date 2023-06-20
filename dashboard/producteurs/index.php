@@ -215,7 +215,7 @@
                             }
                             else if(data["messageFile" ] === 'failed'){
                                 $('.msg-success').text('')
-                                $('.msg-error').text('Fichier image invalide!');
+                                $('.msg-success').text('Enregistrement effectué avec succès');
                             }
                             if(data["message" ] === "success"){
                                 $('.msg-error').text('')
