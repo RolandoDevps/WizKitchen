@@ -34,9 +34,8 @@
 
         <div class="content_para_header">
             <h1>Wizkitchen</h1>
-            <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-            type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+            <p>
+            Mangez mieux et économisez du temps et de l’argent en participant aux activités de batch-cooking organisées par nos équipes. Finis les heures de vaisselle et de réflexion sur les menus de la semaine. On s’en occupe pour vous et on vous délivre tous nos savoirs et secrets culinaires.
           </p>
           <a href="#" class="btn_link">Découvrir</a>
         </div>

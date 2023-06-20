@@ -1,6 +1,6 @@
 <?php 
 $title_header = "Wizkitchen";
-$para_header = "Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to";
+$para_header = " Mangez mieux et économisez du temps et de l’argent en participant aux activités de batch-cooking organisées par nos équipes. Finis les heures de vaisselle et de réflexion sur les menus de la semaine. On s’en occupe pour vous et on vous délivre tous nos savoirs et secrets culinaires.";
 
 include('includes/header2.php'); 
 
@@ -17,7 +17,7 @@ include('includes/header2.php');
         </div>
         <div class="card_description ml-12">
           <h2>LE POTAGER D’ANNIE</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
+          <p>Rapprocher, créer des liens, apprendre, partager des savoirs et des émotions, le tout en gagnant du temps. Nous avons pour projet de vous aider à vivre avec la banane.</p>
           <div class="container_btn_link">
             <a href="#" class="btn_link color_marron">Découvrir</a>
           </div>
@@ -37,8 +37,7 @@ include('includes/header2.php');
         <div class="content_title mt-11">
             <h2>Nos engagements</h2>
             <p>
-            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the leap
+            Transparence, local et responsable… Nous avons des valeurs bien ancrées et nous faisons de votre santé et celle de la planète la priorité.
             </p>
         </div>
 
@@ -71,7 +70,7 @@ include('includes/header2.php');
 
         <span class="content_span text-center zindex-50 mt-10">
             <h2 class="span0-Yx7w3G">Des questions ?<br></h2>
-            <span class="span1-Yx7w3G">Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to</span>
+            <span class="span1-Yx7w3G">Transparence, local et responsable… Nous avons des valeurs bien ancrées et nous faisons de votre santé et celle de la planète la priorité.    </span>
             <div class="container_btn_link">
                 <a href="#" class="btn_link color_marron">Découvrir</a>
             </div>
