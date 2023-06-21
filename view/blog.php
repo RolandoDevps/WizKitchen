@@ -1,7 +1,7 @@
 <?php 
 $title_header = "Nos astuces et recettes";
 $para_header = "Faite vos recherches...!
-Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to";
+Nous partageons tout notre savoir sur la cuisine pour vous aider à vous tourner vers une alimentation saine et bonne. Conseils, recettes, études, interview… Trouvez ici tout ce dont vous avez besoin pour comprendre votre alimentation. Retrouvez également toutes les infos sur nos ateliers et événements.";
 
 include('includes/header2.php'); 
 
@@ -92,7 +92,7 @@ include('includes/header2.php');
 
         <span class="content_span text-center mt-10">
             <h2 class="span0-Yx7w3G">Où trouver tous ces ingrédients ?<br></h2>
-            <span class="span1-Yx7w3G">Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</span>
+            <span class="span1-Yx7w3G"> Nous travaillons en collaboration avec des acteurs locaux qui, comme nous, respectent leur environnement afin de mieux vous servir.</span>
             <div class="container_btn_link">
                 <a href="#" class="btn_link color_marron">Découvrir</a>
             </div>
@@ -109,7 +109,7 @@ include('includes/header2.php');
 
       <div class="content_title w96 mt-11">
         <h2>Les gestes que nous soutenons</h2>
-        <p><strong> Articles sur nos partenaires et leurs projets.</strong> 500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicDummy text ever since the 1500s, when an unknown printer took a</p>
+        <p><strong> Articles sur nos partenaires et leurs projets.</strong>Nous sommes à une époque où chacun doit montrer l’exemple et chaque bon geste mérite d’être mit sous la lumière, alors voici les initiatives de partenaires qui nous donnent le sourire.  a</p>
       </div>
 
       <div class="content_card_item">

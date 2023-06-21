@@ -94,7 +94,6 @@
                             <th scope="col">Libellé</th>
                             <th scope="col">Description</th>
                             <th scope="col">Date d'ajout</th>
-                            <th scope="col">Like</th>
                             <th scope="col">Image</th>
                             <th scope="col" class="table-action">Actions</th>
                         </tr>
@@ -112,9 +111,7 @@
                                 <td><?php echo $blog['label']; ?></td>
                                 <td><?php echo $blog['description']; ?></td>
                                 <td><?php echo $blog['date_add']; ?></td>
-                                <td><?php echo $blog['is_like']; ?></td>
                                 <td><img src="../../uploads/<?php echo $blog['image_url']; ?>" height="100" width="100"  alt="img"/></td>
-                                
                                 <td align="right">
                                     <i id="<?php echo $blog['id']; ?>"
                                        class="fas fa-eye text-info table-action-item"></i>
@@ -193,7 +190,6 @@
                         alert("Fichier image invalide");
                     }
                 }
-
                 var form_data = new FormData();
                 form_data.append("label",label);
                 form_data.append("description",description);

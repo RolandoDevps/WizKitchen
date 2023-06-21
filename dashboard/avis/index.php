@@ -205,6 +205,7 @@
                 form_data.append("fichier",property);
 
                 if (content !== ''&& author !== '' && rating >= 0 && subject !== '' && image_name !== '') {
+                   console.log("here ajax");
                     $.ajax({
                         url: 'traitements/add-avis.php',
                         method: 'POST',

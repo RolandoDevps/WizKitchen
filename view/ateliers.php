@@ -27,8 +27,8 @@ include('includes/header2.php');
       <div class="custo-card inverse mt-11">
         <div class="card_description">
           <h2>Quand découvrir nos produits ?</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p> <br>
-          <p><strong>Des ateliers qui s’adaptent à votre calendrier </strong> <br> Dummy text ever since the 1500s, when an unknown printer</p>
+          <p>Nous savons que chacun à son emploi du temps alors pas de panique on vous accueille 4 jours par semaines et plusieurs fois par jour. </p> <br>
+          <p><strong>Des ateliers qui s’adaptent à votre calendrier </strong> <br> Même lieu, même jour, même heure. Adoptez une bonne routine de consommation en restant régulier. Votre place est réservée, il n’y a aucune inquiétude à se faire. </p>
           <div class="container_btn_link">
             <a href="#" class="btn_link color_marron">Découvrir</a>
           </div>
@@ -71,8 +71,7 @@ include('includes/header2.php');
         </div>
         <div class="card_description">
           <h2>D’où viennent nos produits ?</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-          specimen book. It has survived not only five centuries, but also the leap</p>
+          <p>Nous travaillons en collaboration avec des acteurs locaux qui, comme nous, respectent leur environnement afin de mieux vous servir.</p>
           <div class="container_btn_link">
             <a href="#" class="btn_link color_marron">Découvrir</a>
           </div>

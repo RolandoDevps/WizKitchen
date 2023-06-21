@@ -1,6 +1,4 @@
-<?php
-    $author = $_POST["author"];
-    $rating = $_POST["rating"];
+$rating = $_POST["rating"];
     $subject = $_POST["subject"];
     $content = $_POST["content"];
     $fichier = $_FILES["fichier"];
@@ -8,21 +6,32 @@
     $message =  'failed';
     $messageFile =  'failed';
 
+    if(!empty(trim($author)) && !empty(trim($rating)) && !empty(trim($subject)) && !empty(trim($content))){
+        $date_add = new DateTime('now');
     $is_upload = false;
 
+        require("./../../includes/connect.php");
     if(isset($fichier)){
 
+        $requete = $bdd->prepare('INSERT INTO db_wizkitchen.avis(author, subject, rating, content, date_add) VALUES(:author, :subject, :rating, :content, :date_add)');
         if($fichier['error'] != UPLOAD_ERR_OK){
             $messageFile = "Erreur";
         }
         $extensions = array('jpg', 'jpeg', 'png', 'gif');
         $extension = strtolower(pathinfo($fichier['name'], PATHINFO_EXTENSION));
 
+        $requete->bindvalue(':author', $author);
+        $requete->bindvalue(':subject', $subject);
+        $requete->bindvalue(':rating', $rating);
+        $requete->bindvalue(':content', $content);
+        $requete->bindvalue(':date_add', $date_add->format('Y-m-d H:i:s'));
         $fileName = $_FILES['fichier']['name'];
         $final_image = rand(1000,1000000).$fileName;
 
+        $resultat = $requete->execute();
         $destination = './../../uploads/'.$final_image;
 
+        if($resultat)  $message =  'success';
         if(!in_array($extension, $extensions)){
             $messageFile = "Le fichier n'a pas la bonne extension";
         }
@@ -58,6 +67,7 @@
             }
         }
     }
+    echo($message);die();
 
     $response = json_encode([
         "message" => $message,

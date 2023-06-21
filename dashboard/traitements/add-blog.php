@@ -1,66 +1,75 @@
 <?php
-    $label = $_POST["label"];
-    $description = $_POST["description"];
-    //$is_like = $_POST["is_like"];
-    $fichier = $_FILES["fichier"];
+$label = $_POST["label"];
+$description = $_POST["description"];
+$fichier = $_FILES["fichier"];
 
-    $message =  'failed';
-    $messageFile =  'failed';
+$message = 'failed';
+$messageFile = 'failed';
 
+if (!empty(trim($label)) && !empty(trim($description))) {
+    $date_add = new DateTime('now');
     $is_upload = false;
 
-    if(isset($fichier)){
+    require("./../../includes/connect.php");
 
-        if($fichier['error'] != UPLOAD_ERR_OK){
-            $messageFile = "Erreur";
+    if (isset($fichier)) {
+        $requete = $bdd->prepare('INSERT INTO db_wizkitchen.blogs (label, description, date_add, image_url) VALUES (:label, :description, :date_add, :image_url)');
+
+        if ($fichier['error'] != UPLOAD_ERR_OK) {
+            $messageFile = "Erreur lors de l'upload du fichier";
         }
+
         $extensions = array('jpg', 'jpeg', 'png', 'gif');
         $extension = strtolower(pathinfo($fichier['name'], PATHINFO_EXTENSION));
 
+        $requete->bindValue(':label', $label);
+        $requete->bindValue(':description', $description);
+        $requete->bindValue(':date_add', $date_add->format('Y-m-d H:i:s'));
+
         $fileName = $_FILES['fichier']['name'];
-        $final_image = rand(1000,1000000).$fileName;
+        $final_image = rand(1000, 1000000) . $fileName;
+        $destination = './../../uploads/' . $final_image;
 
-        $destination = './../../uploads/'.$final_image;
-
-        if(!in_array($extension, $extensions)){
+        if (!in_array($extension, $extensions)) {
             $messageFile = "Le fichier n'a pas la bonne extension";
-        }
-        if($fichier['size']>1024*1024){
+        } elseif ($fichier['size'] > 1024 * 1024) {
             $messageFile = "Le fichier est trop grand";
+        } elseif (move_uploaded_file($fichier['tmp_name'], $destination)) {
+            $requete->bindValue(':image_url', $final_image);
+
+            $resultat = $requete->execute();
+
+            if ($resultat) {
+                $message = 'success';
+                $messageFile = 'success';
+            } else {
+                $messageFile = "Erreur lors de l'insertion dans la base de données";
+            }
+        } else {
+            $messageFile = "Erreur, le fichier n'a pas été déplacé dans le dossier de destination";
         }
-        else {
-            $is_upload = move_uploaded_file($fichier['tmp_name'], $destination);
-            if(!$is_upload){
-                $messageFile = "Erreur, le fichier n'a pas ete deplacer dans le dossier de destiination";
-            }
-            if(!empty(trim($label)) && !empty(trim($description)) && $is_upload){
-                $date_add = new DateTime('now');
+    } else {
+        $requete = $bdd->prepare('INSERT INTO db_wizkitchen.blogs (label, description, date_add) VALUES (:label, :description, :date_add)');
 
+        $requete->bindValue(':label', $label);
+        $requete->bindValue(':description', $description);
+        $requete->bindValue(':date_add', $date_add->format('Y-m-d H:i:s'));
 
-                require("./../../includes/connect.php");
+        $resultat = $requete->execute();
 
-                $requete = $bdd->prepare('INSERT INTO db_wizkitchen.blogs(label, description, image_url, date_add) VALUES(:label, :description, :image_url, :date_add)');
-
-                $requete->bindvalue(':label', $label);
-                $requete->bindvalue(':description', $description);
-                $requete->bindvalue(':image_url', $final_image);
-                $requete->bindvalue(':date_add', $date_add->format('Y-m-d H:i:s'));
-
-                $resultat = $requete->execute();
-
-                if($resultat) {
-                    $message = 'success';
-                    $messageFile  = 'success';
-                }
-            }
+        if ($resultat) {
+            $message = 'success';
+        } else {
+            $messageFile = "Erreur lors de l'insertion dans la base de données";
         }
     }
+}
 
-    $response = json_encode([
-        "message" => $message,
-        "messageFile" => $messageFile
-    ]);
+$response = json_encode([
+    "message" => $message,
+    "messageFile" => $messageFile
+]);
 
-    echo($response);die();
-    
+echo $response;
+die();
 ?>
