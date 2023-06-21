@@ -114,6 +114,28 @@
                 </div>
             </div>
 
+            <!--Modal de suppression-->
+            <div class="container-custom-modal">
+                <div class="wrap-custom-modal">
+                    <div class="custom-modal-header">
+                        <h3 class="custom-modal-header-title">Confirmer la suppression</h3>
+                    </div>
+                    <div class="custom-modal-content">
+                        <p class="custom-modal-header-subtitle">Voulez-vous vraiment supprimer la ressource ?</p>
+                    </div>
+                    <div class="custom-modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="toggleModal()">
+                            Annuler
+                        </button>
+                        <button type="button" class="btn btn-danger confirm-delete">
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-custom-modal"></div>
+
         </div>
     </div>
 
@@ -122,16 +144,22 @@
     <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script>
+        function toggleModal() {
+            $('.container-custom-modal').toggleClass('open')
+        }
         add_newsletter();
         delete_newsletter();
         function delete_newsletter() {
             $('.delete-newsletter').click(function () {
                 var id = $(this).attr('id');
+                toggleModal();
 
-                $.post('traitements/delete-newsletter.php', {newsletter_id: id}, function () {
-                    setTimeout(function(){// wait for 5 secs(2)
-                        location.reload();
-                    }, 2000);
+                $('.confirm-delete').click(function () {
+                    $.post('traitements/delete-newsletter.php', {newsletter_id: id}, function () {
+                        setTimeout(function(){// wait for 5 secs(2)
+                            location.reload();
+                        }, 2000);
+                    })
                 })
             })
         }
@@ -141,11 +169,11 @@
                 e.preventDefault();
                 // var new_task = $('.add-new-task input[name=new-task]').val();
                 var email = $('#email').val();
-                if (email != '') {
+                if (email !== '') {
                     $.post('traitements/add-newsletter.php', {email: email}, function (data) {
                         if(data === 'failed'){
                             $('.msg-success').text('')
-                            $('.msg-error').text('Rentrer une adresse email valide !');
+                            $('.msg-error').text('Entrer une adresse email valide !');
                         }
                         if(data === "success"){
                             $('.msg-error').text('')
@@ -157,6 +185,7 @@
                         }
                     })
                 }
+                else $('.msg-error').text('Entrer une adresse email valide !');
             })
         }
 
