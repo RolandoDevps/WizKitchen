@@ -88,7 +88,7 @@
             </div>
 
             <div class="my-5">
-                <h3 class="fs-4 mb-3">Liste des bulletins d'informations</h3>
+                <h3 class="fs-4 mb-3">Liste des avis</h3>
                 <div class="wrap-list-item">
                     <table class="table bg-white rounded shadow-sm  table-hover">
                         <thead>
