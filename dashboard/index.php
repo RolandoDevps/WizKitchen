@@ -108,8 +108,8 @@
                         <thead>
                         <tr>
                             <th scope="col" width="50">#id</th>
-                            <th scope="col">Libellé</th>
-                            <th scope="col">Description</th>
+                            <th style="max-width: 400px;" scope="col">Libellé</th>
+                            <th style="max-width: 500px;" scope="col">Description</th>
                             <th scope="col">Date d'ajout</th>
                             <th scope="col" class="table-action">Image</th>
                         </tr>
@@ -124,8 +124,8 @@
                             ?>
                             <tr>
                                 <th scope="row"><?php echo $atelier['id']; ?></th>
-                                <td><?php echo $atelier['label']; ?></td>
-                                <td><?php echo $atelier['description']; ?></td>
+                                <td style="max-width: 400px;" ><?php echo $atelier['label']; ?></td>
+                                <td style="max-width: 500px;" ><?php echo $atelier['description']; ?></td>
                                 <td><?php echo $atelier['date_add']; ?></td>
                                 <td scope="col" class="table-action"><img src="../../uploads/<?php echo $atelier['image_url']; ?>" height="100" width="100"  alt="img"/></td>
                             </tr>
