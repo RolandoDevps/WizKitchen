@@ -424,8 +424,8 @@ custo-card
 }
 
 .custo-card.no_image .card_description {
-    margin-left: auto !important;
-    width: 56%;
+    /*margin-left: auto !important;*/
+    /*width: 56%;*/
 }
 
 h1.titlesection {
@@ -436,7 +436,7 @@ h1.titlesection {
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    height: 96px;
+    height: 45px;
     letter-spacing: 0.00px;
     line-height: normal;
     mix-blend-mode: normal;
@@ -558,8 +558,6 @@ h1.titlesection {
     line-height: normal;
     text-align: left;
     width: 76%;
-    margin-left: auto !important;
-    margin-right: auto !important;
 }
 
 .content_title h2 {--z-index: 13;
@@ -605,17 +603,16 @@ h1.titlesection {
     /* height: 531px; */
     mix-blend-mode: normal;
     opacity: 1;
-    width: 391px;
+    /*width: 391px;*/
     height: fit-content;
-    margin: 0 9px;
 }
 
 .card_item .card_image img {--z-index: 0;
-    height: 412px;
+    height: 345px;
     mix-blend-mode: normal;
     object-fit: cover;
     opacity: 1;
-    width: 354px;
+    max-width: 300px;
 }
 
 .card_item .card_image {
@@ -669,16 +666,18 @@ span.span1-Yx7w3G {
 }
 
 .card_item_recette {
-    margin-right: 3%;
     position: relative;
 }
 
 .card_item_recette .card_image {
-    height: 496px;
+    height: 350px;
     mix-blend-mode: normal;
     object-fit: cover;
     opacity: 1;
-    width: 465px;
+    /*width: 350px;*/
+    border: 1px solid;
+    border-radius: 40px;
+    overflow: hidden;
 }
 
 .card_item_recette .card_image img {
@@ -692,7 +691,7 @@ span.span1-Yx7w3G {
     opacity: 1;
     position: absolute;
     top: -2%;
-    right: -10px;
+    right: 8px;
 }
 
 .card_image.article img {

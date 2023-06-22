@@ -1,5 +1,5 @@
 <?php 
-$title_header = "Nos partenaires";
+$title_header = "Nos producteurs & partenaires";
 $para_header = "Faite vos recherches...!
 Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to";
 
@@ -7,41 +7,10 @@ include('includes/header2.php');
 
 ?>
 
-<section class="section_item producteurs">
-  <div class="fond-5"></div>
-  <div class="container">
-    <div class="content_item no_padding">
-
-      <div class="custo-card">
-        <div class="card_img">
-          <img src="assets/images/items/8.png" alt="">
-        </div>
-        <div class="card_description ml-12">
-          <h2>Les partenariats</h2>
-          <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
-          <div class="container_btn_link">
-            <a href="#" class="btn_link color_marron">Découvrir</a>
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-  </div>
-</section>
-
 <section class="section_item producteurs-2">
   <div class="fond-5"></div>
   <div class="container">
     <div class="content_item no_padding">
-
-      <div class="content_title mt-11">
-        <h2>Nos producteurs</h2>
-        <p>
-          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-          specimen book. It has survived not only five centuries, but also the leap
-        </p>
-      </div>
 
       <div class="content_card_item">
         <div class="card_item">
@@ -69,25 +38,34 @@ include('includes/header2.php');
             </div>
         </div>
       </div>
-
-        <span class="content_span">
-            <span class="span0-Yx7w3G">Où trouver leurs produits ? <br></span>
-            <span class="span1-Yx7w3G">Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</span>
-            <div class="container_btn_link">
-                <a href="#" class="btn_link color_marron">Découvrir</a>
-            </div>
-        </span>
-
       
     </div>
   </div>
 </section>
 
-<section class="section_item mt--20 mb-95">
+<section class="section_item producteurs-2">
+    <div class="fond-5"></div>
+    <div class="container">
+        <div class="content_item no_padding">
+
+        <span class="content_span text-center zindex-50 mt-10">
+            <h2 class="span0-Yx7w3G">Où trouver leurs produits ? <br></h2>
+            <span class="span1-Yx7w3G">Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.</span>
+            <div class="container_btn_link">
+                <a href="#" style="margin-left: auto; margin-right: auto" class="btn_link color_marron mt-10">Découvrir</a>
+            </div>
+        </span>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section_item mt-10 mb-12">
   <div class="container">
     <div class="content_item no_padding">
 
-      <div class="content_title mt-11">
+      <div class="content_title mt-11 m-0">
         <h2>Nos partenaires</h2>
         <p>
           dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type

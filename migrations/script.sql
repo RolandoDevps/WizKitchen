@@ -17,6 +17,11 @@ create table avis
     date_add  datetime     null
 )collate = utf8mb4_general_ci;
 
+NSERT INTO `avis` (`id`, `image_url`, `author`, `rating`, `subject`, `content`, `date_add`) VALUES
+(1, '5.png', 'Maggie L', 4, 'Pas d’iUn gain de temps', '\"Le batch-cooking a complètement trans formé ma routine culinaire. Des repas savoureux, une organisation simplifiée et un gain de temps précieux. Je ne peux plus m\'en passer !\' ', '2023-06-21 09:35:04'),
+(3, '6.png', 'William G', 5, 'Des plats équilibrés', 'Grâce au batch-cooking proposé par WIZKITCHEN , je redécouvre le plaisir de manger sainement sans passer des heures en cuisine. Une solution pratique et délicieuse pour des repas équilibrés au quotidien.', '2023-06-21 09:38:07'),
+(4, '7.png', 'Jeanne T', 5, 'Économique et écologique !', 'Les services de batch-cooking de WIZKITCHEN ont révolutionné ma façon de cuisiner. Des plats délicieux prêts en un clin d\'œil, parfait pour les journées chargées ! ', '2023-06-21 09:43:02');
+
 create table ateliers
 (
     id          int auto_increment,

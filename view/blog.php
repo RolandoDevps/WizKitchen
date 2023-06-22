@@ -9,39 +9,41 @@ include('includes/header2.php');
 
 <section class="section_item producteurs">
   <div class="fond-5"></div>
-  <div class="content_item overflow_hidden">
+    <div class="container">
+      <div class="content_item overflow_hidden mt-0 p-0">
 
-    <div class="content_title w78 mt-11">
-      <h2 class="color_f9ede6">Nos recettes de la semaine</h2>
-    </div>
+        <div class="content_title w78 mt-5">
+          <h2 class="color_f9ede6">Nos recettes de la semaine</h2>
+        </div>
 
-    <div class="content_card_item ml-11 mt-0">
-      <div class="card_item_recette">
-          <div class="card_image">
-              <img src="assets/images/items/14.png" alt="">
+        <div class="content_card_item mt-0 row">
+          <div class="card_item_recette col-sm-12 col-md-4 mt-3">
+              <div class="card_image">
+                  <img src="assets/images/items/14.png" alt="">
+              </div>
+              <a href="#" class="icon_favoris">
+                <img src="assets/images/icons/favoris.svg" alt="">
+              </a>
           </div>
-          <a href="#" class="icon_favoris">
-            <img src="assets/images/icons/favoris.svg" alt="">
-          </a>
-      </div>
-      <div class="card_item_recette">
-          <div class="card_image">
-              <img src="assets/images/items/15.png" alt="">
+          <div class="card_item_recette col-sm-12 col-md-4 mt-3">
+              <div class="card_image">
+                  <img src="assets/images/items/15.png" alt="">
+              </div>
+              <a href="#" class="icon_favoris">
+                <img src="assets/images/icons/favoris.svg" alt="">
+              </a>
           </div>
-          <a href="#" class="icon_favoris">
-            <img src="assets/images/icons/favoris.svg" alt="">
-          </a>
-      </div>
-      <div class="card_item_recette">
-          <div class="card_image">
-              <img src="assets/images/items/16.png" alt="">
+          <div class="card_item_recette col-sm-12 col-md-4 mt-3">
+              <div class="card_image">
+                  <img src="assets/images/items/16.png" alt="">
+              </div>
+              <a href="#" class="icon_favoris">
+                <img src="assets/images/icons/favoris.svg" alt="">
+              </a>
           </div>
-          <a href="#" class="icon_favoris">
-            <img src="assets/images/icons/favoris.svg" alt="">
-          </a>
+        </div>
+
       </div>
-    </div>
-    
   </div>
 </section>
 
@@ -54,8 +56,8 @@ include('includes/header2.php');
         <h2>Découvrez d’autres recettes</h2>
       </div>
 
-      <div class="content_card_item ml-11 mt-0">
-        <div class="card_item relative">
+      <div class="content_card_item mt-0 row">
+        <div class="card_item relative col-sm-12 col-md-4 mt-3">
             <div class="card_image">
                 <img src="assets/images/items/17.png" alt="">
             </div>
@@ -66,7 +68,7 @@ include('includes/header2.php');
               <img src="assets/images/icons/favoris.svg" alt="">
             </a>
         </div>
-        <div class="card_item relative">
+        <div class="card_item relative col-sm-12 col-md-4 mt-3">
             <div class="card_image">
                 <img src="assets/images/items/18.png" alt="">
             </div>
@@ -77,7 +79,7 @@ include('includes/header2.php');
               <img src="assets/images/icons/favoris.svg" alt="">
             </a>
         </div>
-        <div class="card_item relative">
+        <div class="card_item relative col-sm-12 col-md-4 mt-3">
             <div class="card_image">
                 <img src="assets/images/items/19.png" alt="">
             </div>
@@ -90,15 +92,6 @@ include('includes/header2.php');
         </div>
       </div>
 
-        <span class="content_span text-center mt-10">
-            <h2 class="span0-Yx7w3G">Où trouver tous ces ingrédients ?<br></h2>
-            <span class="span1-Yx7w3G"> Nous travaillons en collaboration avec des acteurs locaux qui, comme nous, respectent leur environnement afin de mieux vous servir.</span>
-            <div class="container_btn_link">
-                <a href="#" class="btn_link color_marron">Découvrir</a>
-            </div>
-        </span>
-
-      
     </div>
   </div>
 </section>

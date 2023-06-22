@@ -11,29 +11,26 @@ include('includes/header2.php');
   <div class="container">
     <div class="content_item no_padding">
 
-      <div class="custo-card">
-        <div class="card_img">
-          <img src="assets/images/items/28.png" alt="">
+    <div class="custo-card card-atelier row mt-5">
+        <div class="card_img col-sm-12 col-md-6">
+            <img src="assets/images/items/28.png" alt="">
         </div>
-        <div class="card_description ml-12">
-          <h2>À la découverte de nos produits</h2>
-          <p>L’équipe Wiz s'implique au maximum pour respecter les deux choses les plus importantes à nos yeux, votre corps et notre planète ! C’est pourquoi nous collaborons avec de petits producteurs qui proposent des produits bio, qui auraient pu être invendus, des associations locales ou autres organismes qui souhaitent faire évoluer les habitudes de consommation avec nous.</p>
-          <div class="container_btn_link">
-            <a href="#" class="btn_link color_marron">Découvrir</a>
-          </div>
+        <div class="card_description col-md-6 col-sm-12">
+            <h2 class="mb-2" style="margin-top: 0 !important;">À la découverte de nos produits</h2>
+            <p>L’équipe Wiz s'implique au maximum pour respecter les deux choses les plus importantes à nos yeux, votre corps et notre planète ! C’est pourquoi nous collaborons avec de petits producteurs qui proposent des produits bio, qui auraient pu être invendus, des associations locales ou autres organismes qui souhaitent faire évoluer les habitudes de consommation avec nous.</p>
         </div>
-      </div>
+    </div>
 
-      <div class="custo-card inverse mt-11">
-        <div class="card_description">
+      <div class="custo-card inverse mt-11 row">
+        <div class="card_description col-sm-12 col-md-6">
           <h2>Quand découvrir nos produits ?</h2>
           <p>Nous savons que chacun à son emploi du temps alors pas de panique on vous accueille 4 jours par semaines et plusieurs fois par jour. </p> <br>
           <p><strong>Des ateliers qui s’adaptent à votre calendrier </strong> <br> Même lieu, même jour, même heure. Adoptez une bonne routine de consommation en restant régulier. Votre place est réservée, il n’y a aucune inquiétude à se faire. </p>
           <div class="container_btn_link">
-            <a href="#" class="btn_link color_marron">Découvrir</a>
+            <a href="#" class="btn_link color_marron" style="width: fit-content; padding-left: 20px; padding-right: 20px">Commencer par une réservation</a>
           </div>
         </div>
-        <div class="card_img">
+        <div class="card_img col-sm-12 col-md-6">
           <img src="assets/images/items/29.png" alt="">
         </div>
       </div>
@@ -52,7 +49,7 @@ include('includes/header2.php');
             <h2 class="span0-Yx7w3G">Envie de manger sain au quotidien ?<br></h2>
             <span class="span1-Yx7w3G">Le batch cooking peut vous aider à maintenir une alimentation saine, et pas qu’une semaine. Moins de flemme et plus de goûts! En participant aux activités organisées par notre équipe, vous apprendrez à cuisiner sainement et efficacement. Petit plus on vous épargne l’effort de la vaisselle, dites pas merci ça nous fait plaisir.</span>
             <div class="container_btn_link">
-                <a href="#" class="btn_link color_marron">Découvrir</a>
+                <a href="#" style="margin-left: auto; margin-right: auto" class="btn_link color_marron">Découvrir</a>
             </div>
         </span>
 
@@ -61,93 +58,21 @@ include('includes/header2.php');
   </div>
 </section>
 
-<section class="section_item mt-10">
+<section class="section_item mt-10 mb-12">
   <div class="container">
     <div class="content_item no_padding">
-
-      <div class="custo-card">
-        <div class="card_img">
-          <img src="assets/images/items/30.png" alt="">
+        <div class="custo-card card-atelier row mt-5">
+            <div class="card_img col-sm-12 col-md-6">
+                <img src="assets/images/items/30.png" alt="">
+            </div>
+            <div class="card_description col-md-6 col-sm-12">
+                <h2 class="mb-2" style="margin-top: 0 !important;">D’où viennent nos produits ?</h2>
+                <p>Nous travaillons en collaboration avec des acteurs locaux qui, comme nous, respectent leur environnement afin de mieux vous servir.</p>
+                <div class="container_btn_link">
+                    <a href="../apropos.php" class="btn_link color_marron">A Propos</a>
+                </div>
+            </div>
         </div>
-        <div class="card_description">
-          <h2>D’où viennent nos produits ?</h2>
-          <p>Nous travaillons en collaboration avec des acteurs locaux qui, comme nous, respectent leur environnement afin de mieux vous servir.</p>
-          <div class="container_btn_link">
-            <a href="#" class="btn_link color_marron">Découvrir</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section_item">
-  <div class="container">
-    <h1 class="titlesection">Vos avis</h1>
-    <div class="content_item_avis">
-
-      <div class="card_avis">
-        <div class="card_avis_top">
-          <div class="card_img_avis">
-            <img src="assets/images/items/5.png" alt="">
-          </div>
-          <p>Maggie L</p>
-        </div>
-        <div class="card_star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star no-color"></i>
-        </div>
-        <div class="card_description_avis">
-          <h2>Pas d’iUn gain de temps</h2>
-          <p>"Le batch-cooking a complètement trans
-formé ma routine culinaire. Des repas savoureux, une organisation simplifiée et un gain de temps précieux. Je ne peux plus m'en passer !"
-</p>
-        </div>
-      </div>
-
-      <div class="card_avis">
-        <div class="card_avis_top">
-          <div class="card_img_avis">
-            <img src="assets/images/items/6.png" alt="">
-          </div>
-          <p>William G</p>
-        </div>
-        <div class="card_star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="card_description_avis">
-          <h2>Des plats équilibrés</h2>
-          <p>Grâce au batch-cooking proposé par wizkitchen nom d'entreprise], je redécouvre le plaisir de manger sainement sans passer des heures en cuisine. Une solution pratique et délicieuse pour des repas équilibrés au quotidien.</p>
-        </div>
-      </div>
-
-      <div class="card_avis">
-        <div class="card_avis_top">
-          <div class="card_img_avis">
-            <img src="assets/images/items/7.png" alt="">
-          </div>
-          <p>Jeanne T</p>
-        </div>
-        <div class="card_star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star no-color"></i>
-        </div>
-        <div class="card_description_avis">
-          <h2>Économique et écologique !</h2>
-          <p> Les services de batch-cooking de wizkitchen ont révolutionné ma façon de cuisiner. Des plats délicieux prêts en un clin d'œil, parfait pour les journées chargées !</p>
-        </div>
-      </div>
 
     </div>
   </div>

@@ -83,6 +83,50 @@ if(isset($_POST['newsletter']))
 
 ?>
 
+<section class="section_item">
+    <div class="container">
+        <h1 class="titlesection">Vos avis</h1>
+        <div class="content_item_avis row">
+
+            <?php
+            require "includes/connect.php";
+            $response = $bdd->query('SELECT * FROM db_wizkitchen.avis ORDER BY id DESC LIMIT 3');
+            // On affiche chaque entrée une à une
+            while ($avis= $response->fetch()) {
+                ?>
+                <div class="card_avis col-sm-12 col-md-5 col-lg-4">
+                    <div class="card_avis_top">
+                        <div class="card_img_avis">
+                            <img src="../uploads/<?php echo $avis['image_url']; ?>" height="100" width="100"
+                                 alt="img"/>
+                        </div>
+                        <p><?php echo $avis['author']; ?></p>
+                    </div>
+                    <div class="card_star">
+                        <?php
+                        for($i = 0; $i < $avis['rating'] -1; $i++){
+                            ?>
+                            <i class="fas fa-star"></i>
+                            <?php
+                        }
+                        ?>
+                        <i class="fas fa-star no-color"></i>
+                    </div>
+                    <div class="card_description_avis">
+                        <h2><?php echo $avis['subject']; ?></h2>
+                        <p><?php echo $avis['content']; ?></p>
+                    </div>
+                </div>
+                <?php
+            }
+            $response->closeCursor(); // Termine le traitement de la requête
+            ?>
+
+        </div>
+    </div>
+</section>
+
+
 <footer>
     <div class="footer">
         <center>

@@ -70,32 +70,13 @@ include('includes/header2.php');
 
         <span class="content_span text-center zindex-50 mt-10">
             <h2 class="span0-Yx7w3G">Des questions ?<br></h2>
-            <span class="span1-Yx7w3G">Transparence, local et responsable… Nous avons des valeurs bien ancrées et nous faisons de votre santé et celle de la planète la priorité.    </span>
+            <span class="span1-Yx7w3G">Transparence, local et responsable… Nous avons des valeurs bien ancrées et nous faisons de votre santé et celle de la planète la priorité. </span>
             <div class="container_btn_link">
-                <a href="#" class="btn_link color_marron">Découvrir</a>
+                <a href="#" style="margin-left: auto; margin-right: auto" class="btn_link color_marron mt-10">Découvrir notre FAQ</a>
             </div>
         </span>
 
       
-    </div>
-  </div>
-</section>
-
-<section class="section_item section3 relative">
-  <div class="fond-5"></div>
-  <div class="fond-3"></div>
-  <div class="container">
-    <div class="content_item special_margin_mt43_mb47">
-
-      <div class="custo-card no_image">
-        <div class="card_description">
-          <p class="color_fffbf9">dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap</p>
-          <div class="container_btn_link">
-            <a href="#" class="btn_link color_e4c9b9">Découvrir</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>

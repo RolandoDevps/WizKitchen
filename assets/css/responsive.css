@@ -2,7 +2,7 @@
 
 /*ici c'ets le responsive du header de la page d'accueil*/
 @media only screen and (max-width: 1200px) {
-    .wrap-navigation {
+    .wrap-navigation, .navigation {
         display: none;
     }
 }
@@ -17,22 +17,42 @@
 
 /* ********************************* body *************************** */
 /* ********************************* body Homepage ****************** */
+@media only screen and (max-width: 998px) {
+    .card_description h2.color_f9ede6 {
+        color: #c25a3a !important;
+    }
+    .card_description p.color_fffbf9 {
+        color: #000000 !important;
+    }
+    .card_avis{
+        margin-top: 20px;
+    }
+    .card_avis:first-child{
+        margin-top: 0px;
+    }
+}
 @media only screen and (max-width: 768px) {
     .custo-card.card-atelier {
         margin-top: 50px;
     }
-    
+
     .custo-card.card-atelier .card_img {
         margin-bottom: 25px;
     }
-    
+
     .custo-card.card-atelier .container_btn_link {
         margin-top: 70px;
     }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 999px) {
     .card-atelier.inverse{
         flex-direction: row-reverse;
+    }
+    .content_item_avis{
+        flex-wrap: nowrap !important;
+    }
+    .card_avis{
+        max-width: 338px !important;
     }
 }
 
