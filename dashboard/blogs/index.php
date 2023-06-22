@@ -91,7 +91,7 @@
                     <thead>
                     <tr>
                         <th scope="col" width="50">#id</th>
-                        <th scope="col">Libellé</th>
+                        <th style="max-width: 400px;" scope="col">Libellé</th>
                         <th scope="col">Like</th>
                         <th scope="col">Date d'ajout</th>
                         <th scope="col">Image</th>
@@ -108,7 +108,7 @@
                         ?>
                         <tr>
                             <th scope="row"><?php echo $blog['id']; ?></th>
-                            <td><?php echo $blog['label']; ?></td>
+                            <td style="max-width: 400px;"><?php echo $blog['label']; ?></td>
                              <td><?php echo ($blog['is_like'] ? 'Oui' : 'Non'); ?></td>
                             <td><?php echo $blog['date_add']; ?></td>
                             <td><img src="../../uploads/<?php echo $blog['image_url']; ?>" height="100" width="100"

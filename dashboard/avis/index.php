@@ -95,7 +95,7 @@
                     <tr>
                         <th scope="col" width="50">#id</th>
                         <th scope="col">Auteur</th>
-                        <th scope="col">Sujet</th>
+                        <th style="max-width: 400px;" scope="col">Sujet</th>
                         <th scope="col">Notation</th>
                         <th scope="col">Date d'ajout</th>
                         <th scope="col">Image</th>
@@ -113,7 +113,7 @@
                         <tr>
                             <th scope="row"><?php echo $avis['id']; ?></th>
                             <td><?php echo $avis['author']; ?></td>
-                            <td><?php echo $avis['subject']; ?></td>
+                            <td style="max-width: 400px;"><?php echo $avis['subject']; ?></td>
                             <td><?php echo $avis['rating']; ?></td>
                             <td><?php echo $avis['date_add']; ?></td>
                             <td><img src="../../uploads/<?php echo $avis['image_url']; ?>" height="100" width="100"

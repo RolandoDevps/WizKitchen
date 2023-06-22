@@ -86,7 +86,7 @@
                     <thead>
                     <tr>
                         <th scope="col" width="50">#id</th>
-                        <th scope="col">Libellé</th>
+                        <th style="max-width: 400px;" scope="col">Libellé</th>
                         <th scope="col">Image</th>
                         <!--<th scope="col">Description</th>-->
                         <th scope="col">Date d'ajout</th>
@@ -103,7 +103,7 @@
                         ?>
                         <tr>
                             <th scope="row"><?php echo $producteur['id']; ?></th>
-                            <td><?php echo $producteur['label']; ?></td>
+                            <td style="max-width: 400px;"><?php echo $producteur['label']; ?></td>
                             <td><img src="../../uploads/<?php echo $producteur['image_url']; ?>" height="100"
                                      width="100" alt="img"/></td>
                             <!--<td>--><?php //echo $producteur['description']; ?><!--</td>-->
