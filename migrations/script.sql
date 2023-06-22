@@ -35,7 +35,7 @@ create table producteurs
     description TEXT         null,
     date_add    DATETIME     null,
     image_url   VARCHAR(255) null,
-    constraint ateliers_pk primary key (id)
+    constraint producteurs_pk primary key (id)
 )collate = utf8mb4_general_ci;
 
 -- ici on aura le script de creation de la table Blog
@@ -47,7 +47,15 @@ create table blogs
     description TEXT         null,
     is_like    boolean null,
     date_add  datetime     null,
-    constraint ateliers_pk primary key (id)
+    constraint blogs_pk primary key (id)
+)collate = utf8mb4_general_ci;
+
+create table reservations
+(
+    id          int auto_increment,
+    -- add more attributes here
+    date_add  datetime     null,
+    constraint reservations_pk primary key (id)
 )collate = utf8mb4_general_ci;
 
 

@@ -19,7 +19,7 @@
                             class="fas fa-feather mr-2"></i>Avis</a>
                 <a href="./../dashboard/newsletter" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-newspaper mr-2"></i>Newletter</a>
-                <a href="" class="list-group-item list-group-item-action second-text fw-bold"><i
+                <a href="./../dashboard/chatbot" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-comment-dots mr-2"></i>ChatBot</a>
                 <a href="./../dashboard/reservations" class="list-group-item list-group-item-action second-text fw-bold"><i
                             class="fas fa-save mr-2"></i>Reservations</a>

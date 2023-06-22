@@ -17,8 +17,18 @@
     <?php
         require '../includes/connect.php';
 
-        $response = $bdd->query('SELECT COUNT(*) FROM db_wizkitchen.ateliers');
-        $totalAteliers = $response->fetch()[0];
+        $responseAtelier = $bdd->query('SELECT COUNT(*) FROM db_wizkitchen.ateliers');
+        $totalAteliers = $responseAtelier->fetch()[0];
+
+        $responseBLog = $bdd->query('SELECT COUNT(*) FROM db_wizkitchen.blogs');
+        $totalBlogs = $responseBLog->fetch()[0];
+
+        $responseProducteur = $bdd->query('SELECT COUNT(*) FROM db_wizkitchen.producteurs');
+        $totalProducteurs = $responseProducteur->fetch()[0];
+
+        // $responsReservation = $bdd->query('SELECT COUNT(*) FROM db_wizkitchen.reservations');
+        $totalReservations = 0;
+
     ?>
     <!-- /#sidebar-wrapper -->
 
@@ -62,7 +72,7 @@
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
-                            <h3 class="fs-2">4920</h3>
+                            <h3 class="fs-2"><?php echo $totalBlogs ?></h3>
                             <p class="fs-5">Blogs</p>
                         </div>
                         <i
@@ -73,7 +83,7 @@
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
-                            <h3 class="fs-2">3899</h3>
+                            <h3 class="fs-2"><?php echo $totalProducteurs ?></h3>
                             <p class="fs-5">Producteurs</p>
                         </div>
                         <i class="fas fa-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -83,7 +93,7 @@
                 <div class="col-md-3">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
-                            <h3 class="fs-2">3000</h3>
+                            <h3 class="fs-2"><?php echo $totalReservations ?></h3>
                             <p class="fs-5">Réservations</p>
                         </div>
                         <i class="fas fa-save fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -92,7 +102,7 @@
             </div>
 
             <div class="my-5">
-                <h3 class="fs-4 mb-3">Ateliers récent</h3>
+                <h3 class="fs-4 mb-3">Ateliers récents</h3>
                 <div class="wrap-list-item">
                     <table class="table bg-white rounded shadow-sm  table-hover">
                         <thead>

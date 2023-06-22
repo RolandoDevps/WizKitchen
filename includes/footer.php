@@ -25,7 +25,7 @@ if(isset($_POST['newsletter']))
 
         if($result)
         {
-            $message = "Un compte est dèjà crée à l'aide l'adresse email que vous avez choisie";
+            $message = "L'adresse email que vous avez choisie a déja été enregistrée";
         }
         else
         {
@@ -66,9 +66,8 @@ if(isset($_POST['newsletter']))
             // Contenu du message
 
 
-
             //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->isHTML(true); //Set email format to HTML
 
             if(!$mail->send()){
                 $message = "Mail non envoyé";
@@ -86,11 +85,20 @@ if(isset($_POST['newsletter']))
 
 <footer>
     <div class="footer">
-        <center><div class="container" style="background-color:#FB6969;">
+        <center>
+            <div class="container" style="background-color:#FB6969;">
                 <font color="#8B0505">
                     <?php if(isset($message)) echo $message;?>
                 </font>
-            </div></center>
+            </div>
+        </center>
+        <center>
+            <div class="container" style="background-color:#69fb6b;">
+                <font color="#8B0505">
+                    <p class="msg-success"><?php if(isset($message1)) echo $message1;?></p>
+                </font>
+            </div>
+        </center>
         <div class="container">
 
             <section class="section_item">
